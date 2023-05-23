@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>minha eloh =)</title>
+    <link rel="shortcut icon" href="Screenshot_1.ico">
+  <style>
+    body {
+      background-color: #f05f5f;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+    }
+
+    .button-wrapper {
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: 2px solid #000000;
+      border-radius: 5px;
+      background-color: #bb3535;
+      color: #ffffff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #nao {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Sabia que vc é linda :)</h1>
+
+    <div class="button-wrapper">
+      <button id="sim">Sim</button>
+    </div>
+
+    <div class="button-wrapper">
+      <button id="nao">Não</button>
+    </div>
+  </div>
+
+  <script>
+    const simButton = document.getElementById('sim');
+
+    simButton.addEventListener('click', function() {
+      window.location.href = '2index.html';
+    });
+
+    const naoButton = document.getElementById('nao');
+
+    naoButton.addEventListener('click', function() {
+      const randomLeft = Math.floor(Math.random() * (window.innerWidth - this.offsetWidth - 20)) + 'px';
+      const randomTop = Math.floor(Math.random() * (window.innerHeight - this.offsetHeight - 20)) + 'px';
+      this.style.left = randomLeft;
+      this.style.top = randomTop;
+    });
+
+    window.addEventListener('resize', function() {
+      naoButton.style.left = '0';
+      naoButton.style.top = '0';
+    });
+  </script>
+</body>
+</html>
